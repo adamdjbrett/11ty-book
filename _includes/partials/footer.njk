@@ -1,0 +1,8 @@
+<footer class="container-fluid p-1 mt-1 text-center border-top border-secondary small">
+<p>Built With <a href="https://11ty.dev" target="_blank">{{ eleventy.generator }}</a> {{metadata.footer.text1}} 
+<a href="{{metadata.footer.text2_url}}" target="_blank">{{metadata.footer.text2}}</a>
+</p>
+</footer>
+{% include "partials/menu.njk" %}
+{% include "partials/search.njk" %}
+{%- js %}{% include "partials/js/scripts.js" %}{% endjs %}{%- js %}{% include "public/js/bs.js" %}{% endjs %}<script type="module" src="{% getBundleFileUrl "js" %}"></script>

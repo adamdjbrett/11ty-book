@@ -1,0 +1,22 @@
+<div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas-header border-bottom">
+<h5 class="offcanvas-title" id="offcanvasExampleLabel">{{metadata.title}}</h5>
+<button type="button" class="btn-close btn bg-secondary text-white" data-bs-dismiss="offcanvas" aria-label="Close"> 
+</button>
+</div>
+<div class="offcanvas-body">
+<div>
+<p>{{metadata.navbar_title}}</p>
+<ul class="menu">{% for n in metadata.navbar %}
+<li><a href="{{n.url}}">{{n.nav}}</a></li>{% endfor %}
+<li><span style="cursor:pointer;" onclick="javascript:(function(){window.hypothesisConfig=function(){return{showHighlights:true,appType:'bookmarklet'};};var d=document,s=d.createElement('script');s.setAttribute('src','https://hypothes.is/embed.js');d.body.appendChild(s)})();">Annotate me</span>
+</li>
+</ul>
+<hr/>
+<p>{{metadata.chapter_List}}</p>
+<ul class="menu">{% for c in collections.books | reverse %}
+<li><a href="{{c.url}}">{{c.data.title}}</a></li>
+{% endfor %}</ul>
+</div>
+</div>
+</div>

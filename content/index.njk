@@ -1,0 +1,13 @@
+---
+layout: start.njk
+title: Monochrome Paper
+description: "Next generation for your books site present by Adam Dj Brett"
+pagination:
+  data: collections.books
+  size: 4
+  reverse: true
+testdata:
+ - item1
+ - item2
+permalink: "/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+---

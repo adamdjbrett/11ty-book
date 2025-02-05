@@ -1,0 +1,14 @@
+<div class="col-md-9 scrollable-content">
+<div class="article-list">
+<div class="col-md-12 mt-3 mb-5 p-1">
+<h1><strong><a href="{{metadata.url}}">{{title or metadata.title}}</a></strong></h1>
+<h2>{{description or metadata.description}}</h2>
+{% include "ui/start/panel.njk" %}
+<div class="tab-content" id="pills-tabContent">
+{% include "ui/start/grid.njk" %}
+{% include "ui/start/list.njk" %}
+</div>
+</div>
+</div>
+</div>
+</div>
