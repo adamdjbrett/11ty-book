@@ -1,0 +1,12 @@
+<div class="col-md-3">
+<div class="sidebar p-3 p-md-5 text-center text-md-start">
+<h3>{{metadata.author.title}}</h3>
+<img src="{{metadata.author.image}}" alt="{{metadata.author.name}}" class="img-fluid img-logo rounded-circle mb-3 mx-auto mx-md-0 d-block" width="100%" height="100%">
+<h4>{{metadata.author.name}}</h4>
+<p>{{metadata.author.email}}</p>
+<p>{{metadata.author.url}}</p>
+<p>{{metadata.author.phone}}</p>
+<p>{% for contactme in metadata.author.address %}{{contactme.text}}<br/>{%- if not loop.last %} {% endif %}{% endfor %}</p>
+<p class="row">{% for connect in metadata.author.social %}<a class="col-6 p-3" href="{{connect.url}}">{{connect.title}}</a></br>{%- if not loop.last %} {% endif %}{% endfor %}</p>
+</div>
+</div>

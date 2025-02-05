@@ -1,0 +1,44 @@
+---
+layout: base.njk
+---
+{%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %}
+{%- css %}{% include "public/css/prism-diff.css" %}{%- endcss %}
+<div class="container-fluid content-wrapper">
+<div class="row mt-5">
+<div class="col-md-7 mx-auto p-3">
+<h1>{{ title }}</h1>
+<h2 class="lead mt-3 mb-3">{{description}}</h2>
+<!-- <ul class="post-metadata">
+	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
+	{%- for tag in tags | filterTagList %}
+	{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
+	{%- endfor %}
+</ul> -->
+<article class="article-item contenta">
+{% if show_table_of_content %}<hr/>
+<h3>{{metadata.table_of_content_title}}</h3>
+<div class="toci">
+{{ content | toc| safe }}
+</div><hr/>{% endif %}
+{{ content | safe }}
+<div class="text-center p-3"><button id="printButton" class="btn btn-dark btn-lg printi">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer me-3" viewBox="0 0 16 16">
+  <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
+  <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1"/>
+</svg>
+Print This Page</button></div>
+</article>
+{%- if collections.books %}
+{%- set previousPost = collections.books | getPreviousCollectionItem %}
+{%- set nextPost = collections.books | getNextCollectionItem %}
+{%- if nextPost or previousPost %}
+<div class="row mb-3 mt-3 prev">
+<div class="col-6 p-3">{%- if previousPost %}<a href="{{ previousPost.url }}">← Previous<br> {{ previousPost.data.title }}</a>{% endif %}</div>
+<div class="col-6 p-3 text-end">{%- if nextPost %}<a href="{{ nextPost.url }}">Next →<br>{{ nextPost.data.title }}</a>{% endif %}</div>
+</div>
+{%- endif %}
+{%- endif %}
+</div>
+</div>
+</div>

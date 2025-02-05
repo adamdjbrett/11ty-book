@@ -1,0 +1,20 @@
+<div class="tab-pane fade show active" id="pills-grid" role="tabpanel" aria-labelledby="pills-grid-tab" tabindex="0">
+<div class="row" id="post-list-grid">
+{%- for item in pagination.items %}
+<div class="col-md-3">
+<p><strong><a href="{{ item.url }}">{{ item.data.title }}</a></strong></p>
+<div class="article-item small border border-secondary rounded p-3">
+<a href="{{ item.url }}"><p class="text-post">{{ item.content | stripHtml | truncate(500) }}</p></a>
+</div>
+<div class="article-info mit-3">
+<p><small>Reading Time: <span class="reading-time"></span></small><br/><span class="article-stats small"></span></p>
+</div>
+</div>
+{% endfor -%}
+</div>
+<div class="row mt-3">
+<div class="col-md-12 text-center mb-4" id="pagination-grid">
+{% if pagination.href.next %}<a class="btn btn-lg btn-dark load-more" href="{{ pagination.href.next }}">Load More</a>{% endif %}
+</div>
+</div>
+</div>
