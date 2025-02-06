@@ -196,14 +196,7 @@ ol.bibliography{
     .printer {
        display: none;
    }
-  @media (max-width: 767px) {
-    #authorColumn {
-      display: none;
-    }
-    #articleColumn {
-      width: 100%;
-    }
-  }
+
 
     @media print {
         @page {
