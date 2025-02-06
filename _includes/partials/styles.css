@@ -5,14 +5,19 @@
     --dark-secondary: #B0B0B0;
     --dark-primary: #BB86FC;
 }
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 body, html {
     height: 100%;
     background-color: var(--dark-bg);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
     color: var(--dark-text);
-    font-size: 15px;
+}
+h1,h2,h3,h4,h5 {
+  font-family: Helvetica, Arial, sans-serif;
 }
 .small {
-    font-size: 12px;
+    font-size: 14px;
 }
 .navbar {
     background-color: var(--dark-surface) !important;
@@ -100,6 +105,19 @@ ul.menu {
 .offcanvas {
    max-width: 320px;
 }
+.custom-scrollbar {
+  overflow-y: auto;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.custom-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 footnotes{
    line-height:1.2rem;
    font-size:0.9rem;
@@ -126,10 +144,17 @@ ol.bibliography{
             height: calc(100vh - 56px);
             overflow-y: auto;
        }
-        .scrollable-content {
-            height: calc(100vh - 56px);
-            overflow-y: auto;
-       }
+    .scrollable-content {
+        height: calc(100vh - 56px);
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
    }
     #fullscreenBtn {
         cursor: pointer;
@@ -177,6 +202,8 @@ ol.bibliography{
     .printer {
        display: none;
    }
+
+
     @media print {
         @page {
            margin-bottom: 0px;

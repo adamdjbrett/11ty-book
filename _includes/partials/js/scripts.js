@@ -92,7 +92,31 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleButton = document.getElementById('toggleAuthor');
+  const authorColumn = document.getElementById('authorColumn');
+  const articleColumn = document.getElementById('articleColumn');
+  
+  function toggleAuthorVisibility() {
+    if (authorColumn.classList.contains('d-none')) {
+      // Tampilkan author
+      authorColumn.classList.remove('d-none');
+      authorColumn.classList.add('col-md-3');
+      articleColumn.classList.remove('col-md-12');
+      articleColumn.classList.add('col-md-9');
+      toggleButton.textContent = 'Hide Author';
+    } else {
+      // Sembunyikan author
+      authorColumn.classList.remove('col-md-3');
+      authorColumn.classList.add('d-none');
+      articleColumn.classList.remove('col-md-9');
+      articleColumn.classList.add('col-md-12');
+      toggleButton.textContent = 'Show Author';
+    }
+  }
 
+  toggleButton.addEventListener('click', toggleAuthorVisibility);
+});
 
         const fullscreenBtn = document.getElementById('fullscreenBtn');
         
