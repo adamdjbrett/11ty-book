@@ -4,7 +4,8 @@ language: "en"
 locale: en_US
 image: /logos.png
 favicon: /logos.png
-url: "http://localhost:8080"
+url: "https://book.000000076.xyz"
+#url: "http://localhost:8080"
 search: "Search" # search Widget
 table_of_content_title: On This Page
 metasocial: 
