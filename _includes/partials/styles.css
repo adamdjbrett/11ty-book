@@ -5,10 +5,16 @@
     --dark-secondary: #B0B0B0;
     --dark-primary: #BB86FC;
 }
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 body, html {
     height: 100%;
     background-color: var(--dark-bg);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
     color: var(--dark-text);
+}
+h1,h2,h3,h4,h5 {
+  font-family: Helvetica, Arial, sans-serif;
 }
 .small {
     font-size: 14px;
