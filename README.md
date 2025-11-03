@@ -1,6 +1,6 @@
 # 11ty-Book
 
-A Complete starter project for your book site, develop by [Adam DJ Brett](https://www.adamdjbrett.com)
+A Complete starter project for your book site, developed by [Adam DJ Brett](https://www.adamdjbrett.com)
 
 ![11ty Book](monochrome.jpg)
 
